@@ -8,11 +8,11 @@ class TPQueue {
     T arr[100];
     int first, last;
  public:
-    TPQueue(): first(0), last(0) {}
+    TPQueue() : first(0), last(0) { }
     void push(T x) {
-        if ((last % size) - (first % size) >= size) {
+        if ((last - first >= size) {
             int i = last++;
-            while (--i >= (first % size)) {
+            while (--i >= first) {
                 if (x.prior > arr[i % size].prior) {
                     arr[(i + 1) % size] = arr[i % size];
                 } else {
