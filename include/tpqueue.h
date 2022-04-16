@@ -10,7 +10,7 @@ class TPQueue {
  public:
     TPQueue() : first(0), last(0) {}
     void push(T x) {
-        if ((last - first >= size)) {
+        if ((last - first < size)) {
             int i = last++;
             while (--i >= first) {
                 if (x.prior > arr[i % size].prior) {
